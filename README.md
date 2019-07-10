@@ -18,13 +18,13 @@ for (TObjectIterator<UWantedComponent> Itr; Itr; ++Itr) {
 ```
 Alternatively, I could have maintain a dynamic array of all actors that have wanted component attached, but then I would need to remember to add / remove actors whenever they are created / destroyed. While potentialy more performant, I decided for Object Iterator instead, seeing it as less complex solution and still meeting specified performance requirements ( runs smoothly with 250 actors ). 
 
-* During the iteration, distance between Wanted and Seeker is checked ( distance can be customized in SeekerComponent properties ). Then there a raycast is projected between Seeker and Wanted Actor. If raycast is not blocked by any obstacle, then Wanted Actor is marked as detected. Their color is changed to red, for better visualization. Additionaly closest and most distant Wanted Actors are marked with yellow color ( please note that in case of only 1 wanted actor, he will be closest and most distant at the same time ).
+* During the iteration, distance between Wanted and Seeker is checked ( distance can be customized in SeekerComponent properties ). Then a raycast is projected between Seeker and Wanted Actor. If raycast is not blocked by any obstacle, Wanted Actor is marked as detected. Wanted Actor's color is changed to red, for better visualization. Additionaly closest and most distant Wanted Actors are marked with yellow color ( please note that in case of only 1 wanted actor, he will be closest and most distant at the same time ).
 
 * Currently raycasts sent from Seeker are blocked only by walls - Wanted Actors do not block each other. This could be easily changed if needed. 
 
 * Seeker has 360 field of view. This could be easily changed if needed, by measuring angle between Seeker's forward vector and projected raycast and checking if it's less then desired angle.
 
-* Main solution is contained in SeekerComponent and WantedComponent C++ files. There are also small portions of BVS for simple tasks ( level blueprint, UI, random moving pawn ).
+* Main solution is contained in SeekerComponent and WantedComponent C++ files. There are also small portions of BVS for simple tasks ( level blueprint, UI, changing pawn colors ).
 
 * In a given specification there was no mention about movement of actors. I allowed myself to add movement to make things more interesting. I also skipped using logs to monitor all the changes since they can be observed with colors. Normally I discuss any specification changes in person. 
 
