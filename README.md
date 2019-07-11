@@ -26,7 +26,7 @@ Alternatively, I could have maintain a dynamic array of all actors that have wan
 
 * Main solution is contained in SeekerComponent and WantedComponent C++ files. There are also small portions of BVS for simple tasks ( level blueprint, UI, changing pawn colors ).
 
-* In a given specification there was no mention about movement of actors. I allowed myself to add movement to make things more interesting. I also skipped using logs to monitor all the changes since they can be observed with colors. Normally I discuss any specification changes in person. 
+* I allowed myself to add movement to actors. I also skipped using logs to monitor all the changes since they can be observed with colors. Normally I discuss any specification changes in person. 
 
 * UE4 built-in Pawn Sensing Component could be also used for this type of task.
 
