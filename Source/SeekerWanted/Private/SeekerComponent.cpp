@@ -51,7 +51,7 @@ void USeekerComponent::Seek()
 			continue;
 		}
 
-		// Raytrace logic start
+		// Raycast logic start
 		FHitResult OutHit;
 		FVector Start = Owner->GetActorLocation();
 		FVector ForwardVector = Owner->GetActorForwardVector();
@@ -59,7 +59,7 @@ void USeekerComponent::Seek()
 		FCollisionQueryParams CollisionParams;
 		CollisionParams.AddIgnoredActor(Owner);
 
-		// If raytrace between seeker and wanted is blocked, then wanted cannot be detected
+		// If raycast between seeker and wanted is blocked, then wanted cannot be detected
 		if (GetWorld()->LineTraceSingleByChannel(OutHit, Start, End, ECC_Visibility, CollisionParams)) {
 			DrawDebugLine(GetWorld(), Start, OutHit.Location, FColor::Green);
 			DrawDebugLine(GetWorld(), OutHit.Location, End, FColor::Red);
